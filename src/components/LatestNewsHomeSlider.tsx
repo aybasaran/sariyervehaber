@@ -25,17 +25,20 @@ const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ images }) => {
       <Swiper
         navigation={true}
         pagination={pagination}
-        className="flex bg-red-300"
+        className="flex"
         slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Autoplay, Navigation, Pagination]}
         autoplay={{ delay: 5000 }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="relative h-40 md:h-72 lg:h-96">
-              <Image src={image} alt="" fill />
+              <Image
+                src={image}
+                alt=""
+                fill
+                priority={index === 0 ? true : false}
+              />
             </div>
           </SwiperSlide>
         ))}
