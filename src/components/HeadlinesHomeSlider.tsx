@@ -36,6 +36,8 @@ const HeadlinesHomeSlider: FC<HeadlinesHomeSliderProps> = ({ images }) => {
             autoplay
             className="flex"
             spaceBetween={10}
+            lazyPreloadPrevNext={2}
+            loop
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>

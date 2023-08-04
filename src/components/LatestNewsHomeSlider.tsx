@@ -29,6 +29,8 @@ const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ images }) => {
         slidesPerView={1}
         modules={[Autoplay, Navigation, Pagination]}
         autoplay={{ delay: 5000 }}
+        loop
+        lazyPreloadPrevNext={1}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
