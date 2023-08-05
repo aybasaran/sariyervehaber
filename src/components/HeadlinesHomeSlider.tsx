@@ -16,7 +16,7 @@ const HeadlinesHomeSlider: FC<HeadlinesHomeSliderProps> = ({ images }) => {
   };
 
   return (
-    <div className="container bg-white ">
+    <div className="container bg-white">
       <div className="p-4">
         <div className="flex items-center gap-4 py-5">
           <h2 className="text-xl">Gazete Manşetleri</h2>

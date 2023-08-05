@@ -1,5 +1,5 @@
-import { FC } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
+import { FC } from "react";
 
 const NewsPage: FC = () => {
   return (
@@ -11,8 +11,8 @@ const NewsPage: FC = () => {
             href: "/",
           },
           {
-            name: "Siyaset",
-            href: "/siyaset",
+            name: "Teknoloji",
+            href: "/teknoloji",
           },
         ]}
       />

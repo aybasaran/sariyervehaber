@@ -60,11 +60,13 @@ const headlines = [
 
 export default async function Home() {
   return (
-    <main className="bg-[#e9ecef] min-h-screen">
-      <FlashNews />
-      <LatestNewsHomeSlider images={images} />
-      <LastFourNews news={lastFourNews} />
-      <HeadlinesHomeSlider images={headlines} />
+    <main className="bg-[#e9ecef]">
+      <div className="">
+        <FlashNews />
+        <LatestNewsHomeSlider images={images} />
+        <LastFourNews news={lastFourNews} />
+        <HeadlinesHomeSlider images={headlines} />
+      </div>
     </main>
   );
 }

@@ -1,9 +1,20 @@
 import { FC } from "react";
-
+import Breadcrumb from "@/components/Breadcrumb";
 const NewsPage: FC = () => {
   return (
     <div>
-      <h1>Category Saglik Page</h1>
+      <Breadcrumb
+        links={[
+          {
+            name: "Ana Sayfa",
+            href: "/",
+          },
+          {
+            name: "Sağlık",
+            href: "/sağlık",
+          },
+        ]}
+      />
     </div>
   );
 };
