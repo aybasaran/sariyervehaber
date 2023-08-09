@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Content } from "@/types/news";
+import { Content } from "@/types/post";
 import Image from "next/image";
 
 interface NewsDetailProps {

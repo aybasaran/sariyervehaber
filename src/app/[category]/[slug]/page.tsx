@@ -8,7 +8,7 @@ import "dayjs/locale/tr";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { News, NewsCategory } from "@/types/news";
+import { NewsCategory } from "@/types/post";
 
 dayjs.locale("tr");
 
@@ -27,7 +27,7 @@ export async function generateMetadata(
 
   // supabase client
   const supabase = createServerComponentClient({ cookies });
-  const { data } = await supabase.from("news").select("*").eq("slug", slug);
+  const { data } = await supabase.from("post").select("*").eq("slug", slug);
 
   if (!data || data.length === 0) {
     redirect("/");
@@ -47,12 +47,12 @@ const NewsPage = async ({
 }) => {
   const supabase = createServerComponentClient({ cookies });
   const { slug, category } = params;
-  // subject and slug
+  // category and slug
   const { data } = await supabase
-    .from("news")
+    .from("post")
     .select("*")
     .eq("slug", slug)
-    .eq("subject", category);
+    .eq("category", category);
 
   if (!data || data.length === 0) {
     redirect("/");
@@ -64,8 +64,12 @@ const NewsPage = async ({
         links={[
           { href: "/", name: "Anasayfa" },
           {
-            href: "/yasam",
-            name: "Yaşam Haberleri",
+            href: `/${data[0].category}`,
+            name: `${data[0].category.toUpperCase()}`,
+          },
+          {
+            href: `/${category}/${slug}`,
+            name: data[0].title,
           },
         ]}
       />

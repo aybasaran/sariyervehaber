@@ -36,7 +36,7 @@ const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ carousels }) => {
       >
         {carousels.map((carousel, index) => (
           <SwiperSlide key={index}>
-            <Link href={`/${carousel.post.slug}`}>
+            <Link href={`${carousel.post.category}/${carousel.post.slug}`}>
               <div className="relative h-40 md:h-72 lg:h-96">
                 <Image
                   src={carousel.image}

@@ -7,7 +7,7 @@ import LastFourNews from "@/components/LastFourNews";
 import HeadlinesHomeSlider from "@/components/HeadlinesHomeSlider";
 
 import { Headline } from "@/types/headline";
-import { Post } from "@/types/news";
+import { Post } from "@/types/post";
 import { Carousel } from "@/types/carousel";
 
 export default async function Home() {
@@ -19,7 +19,8 @@ export default async function Home() {
       `
       image, 
       post ( 
-        slug
+        slug,
+        category
       )
     `
     )
