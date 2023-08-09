@@ -77,6 +77,10 @@ const menuLinks = [
     name: "SEKTÖR",
     link: "/sektor",
   },
+  {
+    name: "MAGAZİN",
+    link: "/magazin",
+  },
 ];
 
 const Header: FC = () => {

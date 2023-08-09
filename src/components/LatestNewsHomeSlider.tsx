@@ -12,7 +12,6 @@ interface LatestNewsHomeSliderProps {
 }
 
 const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ carousels }) => {
-  console.log(carousels);
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
