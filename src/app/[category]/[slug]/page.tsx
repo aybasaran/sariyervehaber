@@ -12,33 +12,33 @@ import { NewsCategory } from "@/types/post";
 
 dayjs.locale("tr");
 
-import type { Metadata, ResolvingMetadata } from "next";
+// import type { Metadata, ResolvingMetadata } from "next";
 
-type Props = {
-  params: { slug: string; category: NewsCategory };
-};
+// type Props = {
+//   params: { slug: string; category: NewsCategory };
+// };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const slug = params.slug;
+// export async function generateMetadata(
+//   { params }: Props,
+//   parent?: ResolvingMetadata
+// ): Promise<Metadata> {
+//   // read route params
+//   const slug = params.slug;
 
-  // supabase client
-  const supabase = createServerComponentClient({ cookies });
-  const { data } = await supabase.from("post").select("*").eq("slug", slug);
+//   // supabase client
+//   const supabase = createServerComponentClient({ cookies });
+//   const { data } = await supabase.from("post").select("*").eq("slug", slug);
 
-  if (!data || data.length === 0) {
-    redirect("/");
-  }
+//   if (!data || data.length === 0) {
+//     redirect("/");
+//   }
 
-  return {
-    title: data[0].title,
-    description: data[0].description,
-    keywords: ["Sarıyer", "Haber", "Yaşam", "Sarıyer Haber", "Sarıyer Yaşam"],
-  };
-}
+//   return {
+//     title: data[0].title,
+//     description: data[0].description,
+//     keywords: ["Sarıyer", "Haber", "Yaşam", "Sarıyer Haber", "Sarıyer Yaşam"],
+//   };
+// }
 
 const NewsPage = async ({
   params,
