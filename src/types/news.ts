@@ -1,18 +1,11 @@
-export enum Subject {
-  SPORT = "sport",
-  POLITICS = "politics",
-  ECONOMY = "economy",
-  TECHNOLOGY = "technology",
-  HEALTH = "health",
-  LIFESTYLE = "lifestyle",
-}
+export type ContentType = "heading" | "paragraph" | "image" | "list";
 
 export type Content = {
-  type: "heading" | "paragraph" | "image" | "list";
+  type: ContentType;
   body: string | string[];
 };
 
-export type News = {
+export type Post = {
   id: number;
   title: string;
   content: Content[];
@@ -20,5 +13,22 @@ export type News = {
   description: string;
   slug: string;
   image: string;
-  subject: Subject;
+  category: NewsCategory;
 };
+
+export type NewsCategory =
+  | "siyaset"
+  | "spor"
+  | "saglik"
+  | "ekonomi"
+  | "yasam"
+  | "teknoloji"
+  | "turkiye-ve-dunya-gundemi"
+  | "magazin"
+  | "kultur-sanat"
+  | "egitim"
+  | "sariyer-haberleri"
+  | "emlak"
+  | "sektor"
+  | "guncel-haberler"
+  | "gundem";

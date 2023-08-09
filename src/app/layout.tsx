@@ -7,11 +7,11 @@ import "./globals.css";
 
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const lato = Lato({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
+  weight: ["200", "400", "600", "800"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className={lato.className}>
+      <body className={poppins.className}>
         <Header />
         {children}
         <Footer />

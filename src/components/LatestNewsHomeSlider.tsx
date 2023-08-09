@@ -1,16 +1,18 @@
 "use client";
 
+import { Carousel } from "@/types/carousel";
 import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Pagination
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { useMemo, FC } from "react";
 
 interface LatestNewsHomeSliderProps {
-  images: string[];
+  carousels: Carousel[];
 }
 
-const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ images }) => {
+const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ carousels }) => {
+  console.log(carousels);
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
@@ -32,16 +34,18 @@ const LatestNewsHomeSlider: FC<LatestNewsHomeSliderProps> = ({ images }) => {
         loop
         lazyPreloadPrevNext={1}
       >
-        {images.map((image, index) => (
+        {carousels.map((carousel, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-40 md:h-72 lg:h-96">
-              <Image
-                src={image}
-                alt=""
-                fill
-                priority={index === 0 ? true : false}
-              />
-            </div>
+            <Link href={`/${carousel.post.slug}`}>
+              <div className="relative h-40 md:h-72 lg:h-96">
+                <Image
+                  src={carousel.image}
+                  alt=""
+                  fill
+                  priority={index === 0 ? true : false}
+                />
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

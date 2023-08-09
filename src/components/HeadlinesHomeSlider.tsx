@@ -6,11 +6,13 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Headline } from "@/types/headline";
+
 interface HeadlinesHomeSliderProps {
-  images: string[];
+  headlines: Headline[];
 }
 
-const HeadlinesHomeSlider: FC<HeadlinesHomeSliderProps> = ({ images }) => {
+const HeadlinesHomeSlider: FC<HeadlinesHomeSliderProps> = ({ headlines }) => {
   const pagination = {
     clickable: true,
   };
@@ -39,12 +41,12 @@ const HeadlinesHomeSlider: FC<HeadlinesHomeSliderProps> = ({ images }) => {
             lazyPreloadPrevNext={2}
             loop
           >
-            {images.map((image, index) => (
+            {headlines.map((headline, index) => (
               <SwiperSlide key={index}>
-                <Link href={image} target="_blank">
+                <Link href={headline.image} target="_blank">
                   <Image
-                    src={image}
-                    alt=""
+                    src={headline.image}
+                    alt={headline.newspaper_name}
                     height={300}
                     width={200}
                     className="object-cover w-full"

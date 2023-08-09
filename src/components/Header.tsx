@@ -42,40 +42,40 @@ const socials: Social[] = [
 
 const menuLinks = [
   {
-    name: "Siyaset",
+    name: "SİYASET",
     link: "/siyaset",
   },
   {
-    name: "Gündem",
-    link: "/gundem",
-  },
-  {
-    name: "Yaşam",
+    name: "YAŞAM",
     link: "/yasam",
   },
   {
-    name: "Sağlık",
+    name: "SAĞLIK",
     link: "/saglik",
   },
   {
-    name: "Kültür Sanat",
-    link: "/kultur-sanat",
-  },
-  {
-    name: "Eğitim",
+    name: "EĞİTİM",
     link: "/egitim",
   },
   {
-    name: "Teknoloji",
-    link: "/teknoloji",
-  },
-  {
-    name: "Spor",
+    name: "SPOR",
     link: "/spor",
   },
   {
-    name: "Ekonomi",
-    link: "/ekonomi",
+    name: "EMLAK",
+    link: "/emlak",
+  },
+  {
+    name: "KÜLTÜR SANAT",
+    link: "/kultur-sanat",
+  },
+  {
+    name: "SARIYER HABERLERİ",
+    link: "/sariyer-haberleri",
+  },
+  {
+    name: "SEKTÖR",
+    link: "/sektor",
   },
 ];
 
