@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
+export const dynamic = "force-dynamic";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["200", "400", "600", "800"],
